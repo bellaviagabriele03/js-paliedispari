@@ -7,7 +7,7 @@
 
 
 let choose = prompt("pari o dispari?");
-let chooseNumber = parseInt(prompt("dammi un numero da 1 a 5"));
+let numUtente = parseInt(prompt("dammi un numero da 1 a 5"));
 
 //Funzione per generare un numero random da 1 a 5
 //e per calcolare la somma tra il numero dato dall'utente e quello generato
@@ -19,14 +19,20 @@ function getRandomNumber() {
     return randomNumber;
 }
 
-//Dichiaro la variabile result e le assegno la somma calcolata dalla funzione getRandomNumber
-let result = getRandomNumber();
+function sommaNumber(n1, n2) {
+    sum = n1 + n2;
+    return sum
+}
+
+// dichiaro variabile numComputer e gli assegno il numero generato dalla funzione
+let numComputer = getRandomNumber();
 
 //stampo il numero scelto dall'utente
-console.log("Il numero dell'utente è:", chooseNumber);
+console.log("Il numero dell'utente è:", numUtente);
 
 //stampo la somma calcolata dalla funzione
-console.log("La somma dei due numeri è:", result);
+let somma = sommaNumber(numComputer, numUtente)
+console.log("La somma dei due numeri è:", somma);
 //stampo cos'ha scelto l'utente (se pari o dispari)
 console.log("L'utente ha scelto:", choose);
 
@@ -39,7 +45,7 @@ console.log("L'utente ha scelto:", choose);
 //fuori dal mio controllo stampo la variabile decreto che a seconda delle condizioni cambierà
 
 let decreto = "Hai perso!!";
-if ((choose === "pari" && result % 2 === 0) || (choose === "dispari" && result % 2 !== 0)) {
+if ((choose === "pari" && somma % 2 === 0) || (choose === "dispari" && somma % 2 !== 0)) {
     decreto = "Hai vinto!!";
 }
 

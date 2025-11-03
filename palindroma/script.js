@@ -10,7 +10,7 @@
 
 //dichiaro la variabile choose e le assegno la parola data dall'utente attraverso il prompt 
 let choose = prompt("inserisci una parola");
-console.log(choose);
+// console.log(choose);
 
 
 // per effetturare il controllo sulle parole usero un ciclo for all'interno della mia funzione:
@@ -33,9 +33,14 @@ function wordPali(choose) {
     return reverseWord === choose;
 }
 
-
+//stampa finale del risultato 
 let result = wordPali(choose);
-console.log(result);
+let decreto = "La tua parola non è polindroma:";
+if (result === true) {
+    decreto = "La tua parola è polindroma:"
+}
+console.log(decreto, choose);
+
 
 
 

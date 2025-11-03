@@ -16,9 +16,7 @@ let chooseNumber = parseInt(prompt("dammi un numero da 1 a 5"));
 function getRandomNumber() {
     let randomNumber = parseInt(Math.floor(Math.random() * 5) + 1);
     console.log("Il computer ha scelto:", randomNumber);
-
-    let sum = chooseNumber + randomNumber;
-    return sum;
+    return randomNumber;
 }
 
 //Dichiaro la variabile result e le assegno la somma calcolata dalla funzione getRandomNumber
@@ -41,9 +39,7 @@ console.log("L'utente ha scelto:", choose);
 //fuori dal mio controllo stampo la variabile decreto che a seconda delle condizioni cambierà
 
 let decreto = "Hai perso!!";
-if (choose === "pari" && result % 2 === 0) {
-    decreto = "Hai vinto!!";
-}else if (choose === "dispari" && result % 2 !== 0) {
+if ((choose === "pari" && result % 2 === 0) || (choose === "dispari" && result % 2 !== 0)) {
     decreto = "Hai vinto!!";
 }
 
